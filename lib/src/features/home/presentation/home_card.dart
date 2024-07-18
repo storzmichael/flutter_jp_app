@@ -65,7 +65,7 @@ class HomeCard extends StatelessWidget {
                           const SizedBox(height: 8),
                           MyGradientButtonWidget(
                             width: 180,
-                            text: 'Oder now',
+                            text: 'Oder Now',
                             onPressed: () {
                               Navigator.push(
                                 context,

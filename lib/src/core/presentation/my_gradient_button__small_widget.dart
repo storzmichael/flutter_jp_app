@@ -60,7 +60,10 @@ class MyGradientButtonSmallWidget extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(0),
         ),
-        child: Text(text),
+        child: Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.w700),
+        ),
       ),
     );
   }

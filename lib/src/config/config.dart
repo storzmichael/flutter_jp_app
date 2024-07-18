@@ -14,7 +14,7 @@ const TextStyle bttnHeadline = TextStyle(
 );
 const TextStyle bttnCategory = TextStyle(
   fontSize: 14,
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w900,
 );
 
 //----------------------------------------------------------------

@@ -16,7 +16,7 @@ class MyGradientButtonWidget extends StatelessWidget {
     this.borderRadius,
     this.borderStroke = 1,
     this.width,
-    this.height = 47.0,
+    this.height = 40.0,
     this.gradient = const LinearGradient(
       colors: [
         Color.fromARGB(255, 240, 105, 204),
@@ -60,7 +60,10 @@ class MyGradientButtonWidget extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(0),
         ),
-        child: Text(text),
+        child: Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.w700),
+        ),
       ),
     );
   }

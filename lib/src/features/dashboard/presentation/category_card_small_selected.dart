@@ -16,14 +16,14 @@ class CategoryCardSmallSelected extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(cardBorderRadius),
         side: BorderSide(
-          color: Colors.white.withOpacity(0.4),
+          color: Color.fromARGB(255, 250, 213, 246).withOpacity(0.1),
           width: widthStroke,
         ),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(cardBorderRadius),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
+          filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Container(
             padding: const EdgeInsets.all(paddingValue),
             decoration: BoxDecoration(

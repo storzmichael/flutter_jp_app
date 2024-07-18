@@ -8,7 +8,7 @@ class CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Definiere eine Farbe mit Transparenz (z.B. 80% Transparenz)
-    Color backgroundColor = Colors.black.withOpacity(0.8);
+    Color backgroundColor = Colors.black.withOpacity(0.9);
 
     return ElevatedButton(
       onPressed: () {},
