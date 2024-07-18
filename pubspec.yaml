@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_sficon: ^1.1.2
+  google_fonts: ^6.2.1
   sf_symbols: ^0.2.0
 
 dev_dependencies:
@@ -18,6 +19,11 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
+  fonts:
+    - family: SFPro
+      fonts:
+        - asset: assets/fonts/SF-Pro.ttf
+
   uses-material-design: true
   assets:
     - assets/detail/
