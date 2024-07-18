@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 import 'package:flutter_jp_app/src/config/config.dart';
-import 'package:flutter_jp_app/src/core/presentation/gradiant_button_small.dart';
+import 'package:flutter_jp_app/src/core/presentation/my_gradient_button__small_widget.dart';
 
 class ItemCardBig extends StatelessWidget {
   const ItemCardBig({super.key});
@@ -72,20 +72,10 @@ class ItemCardBig extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                GradientButtonSmall(
-                  width: 113,
-                  height: 40,
+                MyGradientButtonSmallWidget(
                   text: 'Add to order',
                   onPressed: () {},
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFFB582DE), // Hexcode for color #A095A2
-                      Color(0xFF8D81F2), // Hexcode for color #6548D1
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
+                )
               ],
             ),
           )

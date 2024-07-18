@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/config/config.dart';
-import 'package:flutter_jp_app/src/core/presentation/gradiant_button.dart';
+import 'package:flutter_jp_app/src/core/presentation/my_gradient_button_widget.dart';
 import 'package:flutter_jp_app/src/features/dashboard/presentation/dashboard_screen.dart';
 
 class HomeCard extends StatelessWidget {
@@ -63,9 +63,9 @@ class HomeCard extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 8),
-                          GradientButton(
-                            width: 200,
-                            text: 'Order now',
+                          MyGradientButtonWidget(
+                            width: 180,
+                            text: 'Oder now',
                             onPressed: () {
                               Navigator.push(
                                 context,

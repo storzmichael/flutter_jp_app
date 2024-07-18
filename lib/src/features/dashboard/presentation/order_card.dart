@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/config/config.dart';
-import 'package:flutter_jp_app/src/core/presentation/gradiant_button.dart';
+import 'package:flutter_jp_app/src/core/presentation/my_gradient_button_widget.dart';
 
 class OrderCard extends StatelessWidget {
   const OrderCard({super.key});
@@ -68,7 +68,7 @@ class OrderCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-                        GradientButton(
+                        MyGradientButtonWidget(
                           width: double.infinity,
                           text: 'Add to order €8.99',
                           onPressed: () {},

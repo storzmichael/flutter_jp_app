@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_jp_app/src/core/presentation/gradiant_button.dart';
+import 'package:flutter_jp_app/src/core/presentation/my_gradient_button_widget.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/counter_widget.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/detail_card.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/toggle_button.dart';
@@ -37,11 +37,7 @@ class BottomSheetScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: GradientButton(
-                    width: double.infinity,
-                    text: 'Add to order ₳8.99',
-                    onPressed: () {},
-                  ),
+                  child: MyGradientButtonWidget(width: double.infinity, text: 'Add to order ₳8.99', onPressed: () {}),
                 ),
                 const SizedBox(
                   height: 10,
