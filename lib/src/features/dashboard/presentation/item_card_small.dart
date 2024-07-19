@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/config/config.dart';
+import 'package:flutter_jp_app/src/features/dashboard/data/gallery_data.dart';
+import 'package:flutter_jp_app/src/features/dashboard/domain/gallery_item.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/bottom_sheet_screen.dart';
 
 class ItemCardSmall extends StatelessWidget {
-  final String imagePath;
-  final String name;
-  final String description;
-  final String price;
-  final int likeCount;
+  final GalleryItem galleryItem;
 
-  const ItemCardSmall(
-      {super.key,
-      required this.imagePath,
-      required this.name,
-      required this.description,
-      required this.price,
-      required this.likeCount});
+  const ItemCardSmall({super.key, required this.galleryItem});
 
   @override
   Widget build(BuildContext context) {
+    final index = galleryData.indexOf(galleryItem);
     return SizedBox(
       height: 270,
       width: 220,
@@ -33,7 +26,12 @@ class ItemCardSmall extends StatelessWidget {
               useSafeArea: false,
               context: context,
               builder: (BuildContext context) {
-                return const FractionallySizedBox(heightFactor: 0.885, child: BottomSheetScreen());
+                return FractionallySizedBox(
+                  heightFactor: 0.885,
+                  child: BottomSheetScreen(
+                    galleryItem: galleryData[index],
+                  ),
+                );
               },
             );
           },
@@ -58,15 +56,15 @@ class ItemCardSmall extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(width: 160, height: 160, child: Image.asset(imagePath)),
+                  SizedBox(width: 160, height: 160, child: Image.asset(galleryItem.imagePath)),
                   const SizedBox(height: 8),
                   Text(
-                    name,
+                    galleryItem.imageTitle,
                     textAlign: TextAlign.left,
                     style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    description,
+                    galleryItem.imageDescription,
                     textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 8),
@@ -74,7 +72,7 @@ class ItemCardSmall extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        price,
+                        galleryItem.imagePrice,
                         style: const TextStyle(
                           color: Colors.white,
                         ),
@@ -87,7 +85,7 @@ class ItemCardSmall extends StatelessWidget {
                             size: 14,
                           ),
                           Text(
-                            ' $likeCount',
+                            ' ${galleryItem.imageLikes}',
                             style: const TextStyle(color: Color.fromARGB(255, 172, 170, 170)),
                           )
                         ],

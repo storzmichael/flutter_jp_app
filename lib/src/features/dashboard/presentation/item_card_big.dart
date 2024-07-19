@@ -66,7 +66,7 @@ class ItemCardBig extends StatelessWidget {
                   height: 10,
                 ),
                 const Text(
-                  '€ 13.99',
+                  '₳ 13.99',
                   style: myTextStyle2,
                 ),
                 const SizedBox(

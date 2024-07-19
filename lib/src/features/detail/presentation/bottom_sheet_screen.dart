@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/core/presentation/my_gradient_button_widget.dart';
+import 'package:flutter_jp_app/src/features/dashboard/data/gallery_data.dart';
+import 'package:flutter_jp_app/src/features/dashboard/domain/gallery_item.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/counter_widget.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/detail_card.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/toggle_button.dart';
 
 class BottomSheetScreen extends StatelessWidget {
-  const BottomSheetScreen({super.key});
+  final GalleryItem galleryItem;
+  const BottomSheetScreen({super.key, required this.galleryItem});
 
   @override
   Widget build(BuildContext context) {
+    final index = galleryData.indexOf(galleryItem);
     return Container(
       color: Colors.black87,
       child: SafeArea(
@@ -18,7 +22,9 @@ class BottomSheetScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const DetailCard(),
+                DetailCard(
+                  galleryItem: galleryData[index],
+                ),
                 const SizedBox(
                   height: 55,
                 ),
@@ -32,12 +38,16 @@ class BottomSheetScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 25,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: MyGradientButtonWidget(width: double.infinity, text: 'Add to order ₳8.99', onPressed: () {}),
+                  child: MyGradientButtonWidget(
+                    width: double.infinity,
+                    text: 'Add to order ${galleryItem.imagePrice}',
+                    onPressed: () {},
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

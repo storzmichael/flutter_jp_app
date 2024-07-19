@@ -2,12 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/config/config.dart';
+import 'package:flutter_jp_app/src/features/dashboard/domain/gallery_item.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/ingredients.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/reviews.dart';
 import 'package:flutter_jp_app/src/features/detail/presentation/rounded_xbutton.dart';
 
 class DetailCard extends StatelessWidget {
-  const DetailCard({super.key});
+  final GalleryItem galleryItem;
+  const DetailCard({super.key, required this.galleryItem});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class DetailCard extends StatelessWidget {
               height: imageSize,
               width: imageSize,
               child: Image.asset(
-                'assets/grafiken/cat cupcakes_3D.png',
+                galleryItem.imagePath,
                 fit: BoxFit.cover,
               ),
             ),
@@ -63,22 +65,22 @@ class DetailCard extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                       child: Column(
                         children: [
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.favorite_border_outlined,
                                 color: Color.fromARGB(255, 172, 170, 170),
                                 size: 14,
                               ),
                               Text(
-                                ' 200',
-                                style: TextStyle(color: Color.fromARGB(255, 172, 170, 170)),
+                                ' ${galleryItem.imageLikes}',
+                                style: const TextStyle(color: Color.fromARGB(255, 172, 170, 170)),
                               )
                             ],
                           ),
                           Text(
-                            'Mogli`s Cup',
+                            galleryItem.imageTitle,
                             style: Theme.of(context).textTheme.headlineMedium,
                           ),
                           const SizedBox(
@@ -91,7 +93,7 @@ class DetailCard extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          Text('€8.99',
+                          Text(galleryItem.imagePrice,
                               style:
                                   Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.normal)),
                           const Divider(
