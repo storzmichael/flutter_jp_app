@@ -3,9 +3,12 @@ import 'dart:ui';
 
 import 'package:flutter_jp_app/src/config/config.dart';
 import 'package:flutter_jp_app/src/core/presentation/my_gradient_button__small_widget.dart';
+import 'package:flutter_jp_app/src/features/dashboard/domain/gallery_item.dart';
 
 class ItemCardBig extends StatelessWidget {
-  const ItemCardBig({super.key});
+  final GalleryItem galleryItem;
+  const ItemCardBig({super.key, required this.galleryItem});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +35,7 @@ class ItemCardBig extends StatelessWidget {
           Positioned(
             top: 45,
             right: -5,
-            child: Image.asset('assets/grafiken/Burger_3D.png'),
+            child: Image.asset(galleryItem.imagePath),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
@@ -42,7 +45,7 @@ class ItemCardBig extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Angi`s Yummy Burger', style: myTextStyle2),
+                    Text(galleryItem.imageTitle, style: myTextStyle2),
                     Row(
                       children: [
                         Image.asset('assets/grafiken/star.png'),
@@ -56,18 +59,18 @@ class ItemCardBig extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 140,
                   child: Text(
-                    'Delish vegan burger that tastes like heaven',
+                    galleryItem.imageDescription,
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  '₳ 13.99',
-                  style: myTextStyle2,
+                Text(
+                  galleryItem.imagePrice,
+                  style: textPrice.copyWith(fontSize: 18),
                 ),
                 const SizedBox(
                   height: 50,

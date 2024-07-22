@@ -66,17 +66,14 @@ class ItemCardSmall extends StatelessWidget {
                   Text(
                     galleryItem.imageDescription,
                     textAlign: TextAlign.left,
+                    overflow: TextOverflow.ellipsis, // Hier wird der Text abgeschnitten
+                    maxLines: 1, // Maximale Anzahl von Zeilen
                   ),
                   const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        galleryItem.imagePrice,
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
+                      Text(galleryItem.imagePrice, style: textPrice.copyWith(fontWeight: FontWeight.normal)),
                       Row(
                         children: [
                           const Icon(

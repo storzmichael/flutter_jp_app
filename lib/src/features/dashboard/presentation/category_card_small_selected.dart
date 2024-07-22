@@ -16,7 +16,7 @@ class CategoryCardSmallSelected extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(cardBorderRadius),
         side: BorderSide(
-          color: Color.fromARGB(255, 250, 213, 246).withOpacity(0.1),
+          color: const Color.fromARGB(255, 250, 213, 246).withOpacity(0.1),
           width: widthStroke,
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const TextStyle myTextStyle2 = TextStyle(
   color: Colors.white,
   fontSize: 18,
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w900,
 );
 
 const TextStyle bttnHeadline = TextStyle(
@@ -16,6 +16,7 @@ const TextStyle bttnCategory = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w900,
 );
+const TextStyle textPrice = TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 
 //----------------------------------------------------------------
 const double cardBorderRadius = 35;

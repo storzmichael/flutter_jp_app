@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_jp_app/src/config/config.dart';
+import 'package:flutter_jp_app/src/features/dashboard/data/gallery_data.dart';
 import 'package:flutter_jp_app/src/features/dashboard/presentation/card_scroll_view.dart';
 import 'package:flutter_jp_app/src/features/dashboard/presentation/category_scroll_view.dart';
+import 'package:flutter_jp_app/src/features/dashboard/presentation/auto_swipe_page_view.dart';
 import 'package:flutter_jp_app/src/features/dashboard/presentation/item_card_big.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -40,11 +42,12 @@ class DashboardScreen extends StatelessWidget {
                     height: 5,
                   ),
                   const CategoryScrollView(),
-                  const Expanded(
-                    child: SizedBox(),
+                  const SizedBox(
+                    height: 40,
                   ),
-                  const ItemCardBig(),
-                  const SizedBox(height: 55),
+                  //const AutoSwipePageView(),
+                  ItemCardBig(galleryItem: galleryData[4]),
+                  const Expanded(child: SizedBox()),
                   const Text(
                     'We Recommend',
                     style: myTextStyle2,

@@ -27,13 +27,13 @@ class MyGradientButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _borderRadius = 8;
+    const double borderRadius = 8;
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
         gradient: gradient,
-        borderRadius: BorderRadius.circular(_borderRadius),
+        borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: const [
           // BoxShadow(
           //     blurStyle: BlurStyle.inner,
@@ -56,13 +56,13 @@ class MyGradientButtonWidget extends StatelessWidget {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(_borderRadius),
+            borderRadius: BorderRadius.circular(borderRadius),
           ),
           padding: const EdgeInsets.all(0),
         ),
         child: Text(
           text,
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: const TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
     );

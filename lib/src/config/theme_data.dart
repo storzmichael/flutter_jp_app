@@ -11,7 +11,6 @@ ThemeData myTheme = ThemeData(
       color: Colors.white,
       fontSize: 22,
       fontWeight: FontWeight.w900,
-      fontFamily: 'SF Pro',
     ),
   ),
 );

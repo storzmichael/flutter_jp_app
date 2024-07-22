@@ -6,7 +6,7 @@ class Reviews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double starSize = 20;
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
