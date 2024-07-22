@@ -23,6 +23,7 @@ flutter:
     - family: SFPro
       fonts:
         - asset: assets/fonts/SF-Pro.ttf
+          weight: 700
 
   uses-material-design: true
   assets:
